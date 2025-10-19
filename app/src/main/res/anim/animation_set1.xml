@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- android:repeatMode="reverse"
+     android:repeatCount="1"
+     不属于set标签的属性，需要单独在每一个动画标签下设置才会生效。感兴趣的同学可以自行试下效果
+
+     android:shareInterpolator 表示集合中的动画是否和集合共享同一个插值器
+-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+        android:ordering="together"
+        android:shareInterpolator="true"
+        android:duration="2000"
+        android:interpolator="@android:anim/linear_interpolator">
+
+    <translate
+            android:repeatMode="reverse"
+            android:repeatCount="1"
+            android:fromXDelta="0"
+            android:fromYDelta="0"
+            android:toXDelta="400"
+            android:toYDelta="0"/>
+
+    <alpha
+            android:repeatMode="reverse"
+            android:repeatCount="1"
+            android:fromAlpha="1.0"
+            android:toAlpha="0.0"/>
+
+    <scale
+            android:repeatMode="reverse"
+            android:repeatCount="1"
+            android:fromXScale="1.0"
+            android:fromYScale="1.0"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:toXScale="0.5"
+            android:toYScale="0.5" />
+
+</set>

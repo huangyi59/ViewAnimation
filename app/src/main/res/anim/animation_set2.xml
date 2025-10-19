@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><!-- android:repeatMode="reverse"
+     android:repeatCount="1"
+     不属于set标签的属性，需要单独在每一个动画标签下设置才会生效
+
+     android:startOffset="1000"
+     表示动画的延迟时间，当动画开始后，需要延迟多少毫秒才会 真正播放此动画；
+     若设置重复模式，则重复播放时也会再次延迟
+-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+        android:interpolator="@android:anim/linear_interpolator"
+        android:ordering="sequentially"
+        android:shareInterpolator="true">
+
+    <alpha
+            android:duration="1000"
+            android:fillAfter="true"
+            android:fromAlpha="1.0"
+            android:repeatCount="1"
+            android:repeatMode="reverse"
+            android:startOffset="2000"
+            android:toAlpha="0.0" />
+
+    <scale
+            android:duration="1000"
+            android:fillAfter="true"
+            android:fromXScale="1.0"
+            android:fromYScale="1.0"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:repeatCount="1"
+            android:repeatMode="reverse"
+            android:startOffset="7000"
+            android:toXScale="0.5"
+            android:toYScale="0.5" />
+
+    <translate
+            android:duration="1000"
+            android:fillAfter="true"
+            android:fromXDelta="0"
+            android:fromYDelta="0"
+            android:repeatCount="1"
+            android:repeatMode="reverse"
+            android:toXDelta="400"
+            android:toYDelta="0" />
+
+</set>

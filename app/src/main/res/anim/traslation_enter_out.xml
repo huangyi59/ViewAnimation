@@ -12,5 +12,5 @@
         android:repeatCount="1"
         android:fromXDelta="0"
         android:fromYDelta="0"
-        android:toXDelta="200"
-        android:toYDelta="200"/>
+        android:toXDelta="400"
+        android:toYDelta="0"/>

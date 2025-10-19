@@ -2,6 +2,8 @@ package com.hy.view.animation
 
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationSet
 import android.view.animation.AnimationUtils
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         private const val TAG = "MainActivity"
     }
 
+    private lateinit var animation:Animation
+    private lateinit var animationSet:AnimationSet
     private val viewBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,23 +58,49 @@ class MainActivity : AppCompatActivity() {
             }
 
             // 左移、右移
-            viewBinding.btnAnimationTranslate ->  {
-                startAnim(animId = R.anim.traslation_enter_out)
-                logD(TAG, "Translate.")
-            }
+            viewBinding.btnAnimationTranslate -> startAnim(animId = R.anim.traslation_enter_out)
 
             // 中心旋转
-            viewBinding.btnAnimationRotate -> {
-                startAnim(animId = R.anim.rotate_in_center)
-                logD(TAG, "Rotate.")
-            }
+            viewBinding.btnAnimationRotate -> startAnim(animId = R.anim.rotate_in_center)
+
+            // 组合1
+            viewBinding.btnAnimationSet1 -> startAnimSet(R.anim.animation_set1)
+
+            // 组合2
+            viewBinding.btnAnimationSet2 -> startAnimSet(R.anim.animation_set2)
         }
     }
 
     private fun startAnim(animId: Int) {
-        AnimationUtils.loadAnimation(this, animId).apply {
+        animation = AnimationUtils.loadAnimation(this, animId).apply {
             viewBinding.ivAnimation.startAnimation(this)
+            // 监听动画的过程
+            setAnimationListener(object: Animation.AnimationListener {
+                override fun onAnimationStart(animation: Animation?) {
+                    logD(TAG, "onAnimationStart")
+                }
+
+                override fun onAnimationEnd(animation: Animation?) {
+                    logD(TAG, "onAnimationEnd")
+                }
+
+                override fun onAnimationRepeat(animation: Animation?) {
+                    logD(TAG, "onAnimationRepeat")
+                }
+
+            })
         }
+    }
+
+    private fun startAnimSet(setAnimId: Int) {
+        animationSet = AnimationUtils.loadAnimation(this, setAnimId) as AnimationSet
+        viewBinding.ivAnimation.startAnimation(animationSet)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        animation.cancel()
+        animationSet.cancel()
     }
 
 }
