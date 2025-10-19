@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ViewAnimation</string>
+    <string name="string01">渐变</string>
+    <string name="string02">缩放</string>
+    <string name="string03">平移</string>
+    <string name="string04">旋转</string>
 </resources>

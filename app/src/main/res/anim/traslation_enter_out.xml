@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- android:repeatCount	infinite	无限重复
+                            3	重复3次
+     android:repeatMode	    restart	每次从头开始
+                            reverse	反向重复（类似往返运动）
+-->
+<!-- android:repeatMode="restart" 该行可以不加，默认即从头开始 -->
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+        android:duration="1500"
+        android:fillAfter="true"
+        android:repeatMode="reverse"
+        android:repeatCount="1"
+        android:fromXDelta="0"
+        android:fromYDelta="0"
+        android:toXDelta="200"
+        android:toYDelta="200"/>
