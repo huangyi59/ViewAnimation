@@ -8,7 +8,7 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
         android:ordering="together"
         android:shareInterpolator="true"
-        android:duration="2000"
+        android:duration="1000"
         android:interpolator="@android:anim/linear_interpolator">
 
     <translate

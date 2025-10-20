@@ -12,16 +12,16 @@
         android:shareInterpolator="true">
 
     <alpha
-            android:duration="1000"
+            android:duration="500"
             android:fillAfter="true"
             android:fromAlpha="1.0"
             android:repeatCount="1"
             android:repeatMode="reverse"
-            android:startOffset="2000"
+            android:startOffset="1000"
             android:toAlpha="0.0" />
 
     <scale
-            android:duration="1000"
+            android:duration="500"
             android:fillAfter="true"
             android:fromXScale="1.0"
             android:fromYScale="1.0"
@@ -29,12 +29,12 @@
             android:pivotY="50%"
             android:repeatCount="1"
             android:repeatMode="reverse"
-            android:startOffset="7000"
+            android:startOffset="3000"
             android:toXScale="0.5"
             android:toYScale="0.5" />
 
     <translate
-            android:duration="1000"
+            android:duration="500"
             android:fillAfter="true"
             android:fromXDelta="0"
             android:fromYDelta="0"

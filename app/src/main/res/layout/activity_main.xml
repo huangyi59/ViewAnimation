@@ -7,26 +7,14 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_view_animation"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:paddingStart="15dp"
-            android:text="@string/string00"
-            android:gravity="center_vertical"
-            android:background="@android:color/black"
-            android:textColor="@android:color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="RtlSymmetry" />
-
+    <!-- View 动画 -->
     <Button
             android:id="@+id/btn_animation_alpha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/string01"
             android:onClick="onViewClick"
+            android:text="@string/string01"
             app:layout_constraintEnd_toStartOf="@+id/btn_animation_scale"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,8 +24,8 @@
             android:id="@+id/btn_animation_scale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/string02"
             android:onClick="onViewClick"
+            android:text="@string/string02"
             app:layout_constraintEnd_toStartOf="@+id/btn_animation_set1"
             app:layout_constraintStart_toEndOf="@+id/btn_animation_alpha"
             app:layout_constraintTop_toTopOf="@+id/btn_animation_alpha" />
@@ -46,8 +34,8 @@
             android:id="@+id/btn_animation_set1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/string05"
             android:onClick="onViewClick"
+            android:text="@string/string05"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btn_animation_scale"
             app:layout_constraintTop_toTopOf="@+id/btn_animation_alpha" />
@@ -56,9 +44,9 @@
             android:id="@+id/btn_animation_translate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/string03"
-            android:onClick="onViewClick"
             android:layout_marginTop="10dp"
+            android:onClick="onViewClick"
+            android:text="@string/string03"
             app:layout_constraintEnd_toStartOf="@+id/btn_animation_scale"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,8 +56,8 @@
             android:id="@+id/btn_animation_rotate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/string04"
             android:onClick="onViewClick"
+            android:text="@string/string04"
             app:layout_constraintEnd_toStartOf="@+id/btn_animation_set2"
             app:layout_constraintStart_toEndOf="@+id/btn_animation_translate"
             app:layout_constraintTop_toTopOf="@+id/btn_animation_translate" />
@@ -78,11 +66,76 @@
             android:id="@+id/btn_animation_set2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/string06"
             android:onClick="onViewClick"
+            android:text="@string/string06"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btn_animation_rotate"
             app:layout_constraintTop_toTopOf="@+id/btn_animation_translate" />
+
+    <Button
+            android:id="@+id/btn_object_alpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="onViewClick"
+            android:text="@string/string01"
+            app:layout_constraintEnd_toStartOf="@+id/btn_object_scale"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_object_animation" />
+
+    <Button
+            android:id="@+id/btn_object_scale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onViewClick"
+            android:text="@string/string02"
+            app:layout_constraintEnd_toStartOf="@+id/btn_object_set1"
+            app:layout_constraintStart_toEndOf="@+id/btn_animation_alpha"
+            app:layout_constraintTop_toTopOf="@+id/btn_object_alpha" />
+
+    <!-- 属性动画 -->
+    <Button
+            android:id="@+id/btn_object_set1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onViewClick"
+            android:text="@string/string05"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_object_scale"
+            app:layout_constraintTop_toTopOf="@+id/btn_object_scale" />
+
+    <Button
+            android:id="@+id/btn_object_translate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="onViewClick"
+            android:text="@string/string03"
+            app:layout_constraintEnd_toStartOf="@+id/btn_object_rotate"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_object_alpha" />
+
+    <Button
+            android:id="@+id/btn_object_rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onViewClick"
+            android:text="@string/string04"
+            app:layout_constraintEnd_toStartOf="@+id/btn_animation_set2"
+            app:layout_constraintStart_toEndOf="@+id/btn_animation_translate"
+            app:layout_constraintTop_toTopOf="@+id/btn_object_translate" />
+
+    <Button
+            android:id="@+id/btn_object_set2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onViewClick"
+            android:text="@string/string06"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_object_rotate"
+            app:layout_constraintTop_toTopOf="@+id/btn_object_translate" />
 
     <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_animation"
@@ -94,19 +147,79 @@
             app:layout_constraintStart_toStartOf="@+id/btn_animation_alpha"
             app:layout_constraintTop_toBottomOf="@+id/btn_animation_translate" />
 
-    <!-- 属性动画 -->
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_object_animation"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_launcher_background"
+            android:foreground="@drawable/ic_launcher_foreground"
+            app:layout_constraintStart_toStartOf="@+id/btn_object_alpha"
+            app:layout_constraintTop_toBottomOf="@+id/btn_object_translate" />
+
+    <!-- View动画 -->
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_view_animation"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@android:color/black"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:text="@string/string00"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry" />
+
     <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_object_animation"
             android:layout_width="match_parent"
             android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/black"
+            android:gravity="center_vertical"
             android:paddingStart="15dp"
             android:text="@string/string07"
-            android:gravity="center_vertical"
-            android:background="@android:color/black"
             android:textColor="@android:color/white"
-            android:layout_marginTop="40dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_animation"
             tools:ignore="RtlSymmetry" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_layout_anim"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/black"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:text="@string/string08"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_object_animation"
+            tools:ignore="RtlSymmetry" />
+
+    <Button
+            android:id="@+id/btn_custom_anim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onViewClick"
+            android:text="@string/string09"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@id/btn_animation_alpha"
+            app:layout_constraintTop_toBottomOf="@+id/tv_layout_anim" />
+
+    <View
+            android:id="@+id/view_bottom"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:background="@android:color/holo_green_light"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
